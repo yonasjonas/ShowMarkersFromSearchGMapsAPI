@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.ts"></script>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <!-- Supply a default place ID for a place in Brooklyn, New York. -->
+      <input id="address" type="text" />
+      <input id="submit" type="button" value="Get Address" />
+      <div id="search_results"></div>
+      <!--  Dropdown for selection-->
+      <select id="level1"></select>
+      <select id="level2" style="display:none;"></select>
+      <select id="level3" style="display:none;"></select>
+      <select id="level4" style="display:none;"></select>
+        
+    </div>
+    <div id="map"></div>
+
+    <!-- 
+     The `defer` attribute causes the callback to execute after the full HTML
+     document has been parsed. For non-blocking uses, avoiding race conditions,
+     and consistent behavior across browsers, consider loading using Promises
+     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+    -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCmccoWYSXkgU0oLv3uH0hoo2bRQwh1zg&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>
